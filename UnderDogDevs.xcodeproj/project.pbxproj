@@ -7,23 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		79CD06602830A2C800728707 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD065F2830A2C800728707 /* Helpers.swift */; };
 		79EA52E0282EE65800400546 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EA52DF282EE65800400546 /* AppDelegate.swift */; };
 		79EA52E2282EE65800400546 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EA52E1282EE65800400546 /* SceneDelegate.swift */; };
-		79EA52E4282EE65800400546 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EA52E3282EE65800400546 /* ViewController.swift */; };
+		79EA52E4282EE65800400546 /* WordPlaySolutions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EA52E3282EE65800400546 /* WordPlaySolutions.swift */; };
 		79EA52E7282EE65800400546 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79EA52E5282EE65800400546 /* Main.storyboard */; };
 		79EA52E9282EE66200400546 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79EA52E8282EE66200400546 /* Assets.xcassets */; };
 		79EA52EC282EE66200400546 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79EA52EA282EE66200400546 /* LaunchScreen.storyboard */; };
+		79EA52F7282EEB5C00400546 /* sowpods.txt in Resources */ = {isa = PBXBuildFile; fileRef = 79EA52F6282EEB5C00400546 /* sowpods.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		79CD065F2830A2C800728707 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		79EA52DC282EE65800400546 /* UnderDogDevs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnderDogDevs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79EA52DF282EE65800400546 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79EA52E1282EE65800400546 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		79EA52E3282EE65800400546 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		79EA52E3282EE65800400546 /* WordPlaySolutions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordPlaySolutions.swift; sourceTree = "<group>"; };
 		79EA52E6282EE65800400546 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		79EA52E8282EE66200400546 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		79EA52EB282EE66200400546 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		79EA52ED282EE66200400546 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79EA52F6282EEB5C00400546 /* sowpods.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sowpods.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,25 @@
 		79EA52DE282EE65800400546 /* UnderDogDevs */ = {
 			isa = PBXGroup;
 			children = (
-				79EA52DF282EE65800400546 /* AppDelegate.swift */,
-				79EA52E1282EE65800400546 /* SceneDelegate.swift */,
-				79EA52E3282EE65800400546 /* ViewController.swift */,
 				79EA52E5282EE65800400546 /* Main.storyboard */,
-				79EA52E8282EE66200400546 /* Assets.xcassets */,
-				79EA52EA282EE66200400546 /* LaunchScreen.storyboard */,
-				79EA52ED282EE66200400546 /* Info.plist */,
+				79EA52E3282EE65800400546 /* WordPlaySolutions.swift */,
+				79CD065F2830A2C800728707 /* Helpers.swift */,
+				79EA52F6282EEB5C00400546 /* sowpods.txt */,
+				79EA52F3282EEA8500400546 /* Resources */,
 			);
 			path = UnderDogDevs;
+			sourceTree = "<group>";
+		};
+		79EA52F3282EEA8500400546 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				79EA52ED282EE66200400546 /* Info.plist */,
+				79EA52DF282EE65800400546 /* AppDelegate.swift */,
+				79EA52E1282EE65800400546 /* SceneDelegate.swift */,
+				79EA52E8282EE66200400546 /* Assets.xcassets */,
+				79EA52EA282EE66200400546 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +139,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79EA52F7282EEB5C00400546 /* sowpods.txt in Resources */,
 				79EA52EC282EE66200400546 /* LaunchScreen.storyboard in Resources */,
 				79EA52E9282EE66200400546 /* Assets.xcassets in Resources */,
 				79EA52E7282EE65800400546 /* Main.storyboard in Resources */,
@@ -138,9 +153,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79EA52E4282EE65800400546 /* ViewController.swift in Sources */,
+				79EA52E4282EE65800400546 /* WordPlaySolutions.swift in Sources */,
 				79EA52E0282EE65800400546 /* AppDelegate.swift in Sources */,
 				79EA52E2282EE65800400546 /* SceneDelegate.swift in Sources */,
+				79CD06602830A2C800728707 /* Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,7 +307,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7VVA7JF63G;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = UnderDogDevs/Info.plist;
+				INFOPLIST_FILE = UnderDogDevs/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -319,7 +335,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7VVA7JF63G;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = UnderDogDevs/Info.plist;
+				INFOPLIST_FILE = UnderDogDevs/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

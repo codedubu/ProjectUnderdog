@@ -14,39 +14,10 @@ class WordPlaySolutions: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        retrieveFiles()
-        runProblems()
+        retrieveFilesandRunProblems()
     }
     
-    func retrieveFiles() {
-        if let wordListURL          = Bundle.main.url(forResource: "sowpods", withExtension: ".txt") {
-            if let startingWords    = try? String(contentsOf: wordListURL) {
-                wordList            = startingWords.components(separatedBy: "\n")
-            }
-        }
-    }
-    
-    func runProblems() {
-        //        containsUU()
-        //        containsXYandZ()
-        //        containsQnotU()
-        //        containsCAT5()
-        //        doesNotContainEA5()
-        //        containsBX5()
-        //        startXendY()
-        //        noVowelsorY()
-        //        containsAllVowels()
-        //        containsAllVowelsAlphabetized()
-        //        containsTYPE()
-        //        endsWithIGHTLY()
-        //        shortestContainsAllVowels()
-        //        longestContainsNoVowels()
-        findLeastCommonQXZ()
-        //        longestPalindrome()
-        //        neverOccuringEnglishConsecutives()
-    }
-    
-    
+    /// For Loops and If Conditions
     func containsUU() {
         var wordContainer: [String] = []
         
@@ -135,9 +106,11 @@ class WordPlaySolutions: UIViewController {
     
     func noVowelsorY() {
         var wordContainer: [String] = []
+        let vowels: [Character] = ["A", "E", "I", "O", "U", "Y"]
         
+ 
         for word in wordList {
-            if !word.contains("A") && !word.contains("E") && !word.contains("I") && !word.contains("O") && !word.contains("U") && !word.contains("Y") {
+            if !word.contains(where: vowels.contains) {
                 wordContainer.append(word)
             }
         }
@@ -169,13 +142,13 @@ class WordPlaySolutions: UIViewController {
             }
         }
         
-        print("10: \(wordContainer) -> \(wordContainer.count)")
+        print("10: \(wordContainer) -> \(wordContainer.count) words found\n")
     }
     
     
     func hasVowelsInOrder(word: String) -> Bool {
-        var vowelsToFind: [Character]   = ["A","E","I","O","U"]
-        var foundVowels: [Character]    = []
+        var vowelsToFind: [Character] = ["A","E","I","O","U"]
+        var foundVowels: [Character] = []
         
         for letter in word {
             
@@ -202,7 +175,6 @@ class WordPlaySolutions: UIViewController {
             if word.contains("TYPE") {
                 wordContainer.append(word)
             }
-            
         }
         
         print("11: \(wordContainer) -> \(wordContainer.count) words found\n")
@@ -231,9 +203,6 @@ class WordPlaySolutions: UIViewController {
             }
         }
         
-        // check if there are equal values.
-        // all the words that might have that length
-        
         if let shortestWord = wordContainer.min(by: {$1.count > $0.count}) {
             print("13: The shortest word with all vowels in it is: \(shortestWord)\n")
         }
@@ -249,8 +218,6 @@ class WordPlaySolutions: UIViewController {
             }
         }
         
-        // check if there are equal values.
-        // all the words that might have that length
         
         if let longestWord = wordContainer.max(by: {$0.count < $1.count}) {
             print("14: The longest word with no vowels in it is: \(longestWord)\n")
@@ -281,60 +248,64 @@ class WordPlaySolutions: UIViewController {
                 }
             }
         }
+        
         let lowestNumber = min(qCount, xCount, zCount)
         
-        print([qCount,xCount,zCount])
+     
         
         if lowestNumber == qCount {
-            print("Q is the least common with \(qCount) hits.")
+            print("15: Q is the least common with \(qCount) hits. Totals: \([qCount,xCount,zCount])\n")
         } else if lowestNumber == xCount {
-            print("X is the least common with \(qCount) hits.")
+            print("15: X is the least common with \(qCount) hits. Totals: \([qCount,xCount,zCount])\n")
         } else {
-            print("Z is the least common with \(qCount) hits.")
+            print("15: Z is the least common with \(qCount) hits. Totals: \([qCount,xCount,zCount])\n")
         }
-        
     }
-                            
     
-        func longestPalindrome() {
-            var wordContainer: [String] = []
+    
+    func longestPalindrome() {
+        var wordContainer: [String] = []
+        
+        for word in wordList {
             
-            for word in wordList {
-                
-                let reversedWord = String(word.reversed())
-                
-                if word == reversedWord {
-                    wordContainer.append(reversedWord)
-                }
-            }
+            let reversedWord = String(word.reversed())
             
-            
-            if let longestPalindrome = wordContainer.max(by: {$0.count < $1.count})  {
-                print("16: The longest palindrome is: \(longestPalindrome)")
-                
+            if word == reversedWord {
+                wordContainer.append(reversedWord)
             }
         }
-                            
-                            
-                            func neverOccuringEnglishConsecutives() {
-            var wordContainer: [String] = []
+        
+        if let longestPalindrome = wordContainer.max(by: {$0.count < $1.count})  {
+            print("16: The longest palindrome is: \(longestPalindrome)\n")
             
-            for word in wordList {
-                
-                var previousLetter              = word.first
-                var hasConsecutiveLetters: Bool = false
-                
-                for letter in word.dropFirst() {
-                    if letter == previousLetter { hasConsecutiveLetters = true }
-                    previousLetter = letter
+        }
+    }
+    
+    
+    func neverOccuringEnglishConsecutives() {
+        var alphabet: [Character] = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+
+        
+        for word in wordList {
+            
+            var previousLetter = word.first
+            
+            for letter in word.dropFirst() {
+
+                if letter == previousLetter {
+                    if alphabet.contains(letter) { alphabet.removeAll { $0 == letter } }
                 }
-                
-                if hasConsecutiveLetters == false { wordContainer.append(word) }
+                previousLetter = letter
             }
-            
-            print("\(wordContainer)")
         }
         
-        
-    } // END OF CLASS
+        if alphabet.count >= 2 {
+            print("17: The only letters that never appear consecutively in the English language are \(alphabet)\n")
+        } else {
+            print("17: The only letter that never appears consecutively in the English language is \(alphabet)\n")
+        }
+    }
     
+    
+} // END OF CLASS
+
